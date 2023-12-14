@@ -26,7 +26,7 @@
       margin-top: 50px;
     }
     .flight-box {
-      background-color:rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.8);
       padding: 100px;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(230, 13, 13, 0.8);
@@ -36,40 +36,43 @@
 <body>
   <div class="flight-box">
     <h1 style="margin-bottom: 100px;">Find the Cheapest Flight Route</h1>
-    <div class="flight-selection">
-      <label for="destination">Select Source:</label>
-      <select name="destination" id="destination">
-        <option value="LAX">Los Angeles International Airport (LAX)</option>
-        <option value="ORD">Chicago O'Hare International Airport (ORD)</option>
-        <option value="MIA">Miami International Airport (MIA)</option>
-        <option value="SFO">San Francisco International Airport (SFO)</option>
-        <option value="IAD">Washington Dulles International Airport (IAD)</option>
-        <option value="ATL">Hartsfield-Jackson Atlanta International Airport (ATL)</option>
-        <option value="SEA">Seattle-Tacoma International Airport (SEA)</option>
-        <option value="MCO">Orlando International Airport (MCO)</option>
-        <option value="BOS">Boston Logan International Airport (BOS)</option>
-        <option value="LAS">Harry Reid International Airport (LAS)</option>
-        <option value="DFW">Dallas/Fort Worth International Airport (DFW)</option>
-        <option value="JFK">John F. Kennedy International Airport (JFK)</option>
-      </select>
-      <br>
-      <label for="source">Select Destination:</label>
-      <select name="source" id="source">
-        <option value="LAX">Los Angeles International Airport (LAX)</option>
-        <option value="ORD">Chicago O'Hare International Airport (ORD)</option>
-        <option value="MIA">Miami International Airport (MIA)</option>
-        <option value="SFO">San Francisco International Airport (SFO)</option>
-        <option value="IAD">Washington Dulles International Airport (IAD)</option>
-        <option value="ATL">Hartsfield-Jackson Atlanta International Airport (ATL)</option>
-        <option value="SEA">Seattle-Tacoma International Airport (SEA)</option>
-        <option value="MCO">Orlando International Airport (MCO)</option>
-        <option value="BOS">Boston Logan International Airport (BOS)</option>
-        <option value="LAS">Harry Reid International Airport (LAS)</option>
-        <option value="DFW">Dallas/Fort Worth International Airport (DFW)</option>
-        <option value="JFK">John F. Kennedy International Airport (JFK)</option>
-      </select>
-    </div>
-  <button type="submit">Find the cheapest flight route</button>
-</div>  
+    <form action="/result" method="get">
+      <div class="flight-selection">
+        <label for="origin">Select Source:</label>
+        <select name="origin" id="origin">
+          <option value="LAX">Los Angeles International Airport (LAX)</option>
+          <option value="ORD">Chicago O'Hare International Airport (ORD)</option>
+          <option value="MIA">Miami International Airport (MIA)</option>
+          <option value="SFO">San Francisco International Airport (SFO)</option>
+          <option value="IAD">Washington Dulles International Airport (IAD)</option>
+          <option value="ATL">Hartsfield-Jackson Atlanta International Airport (ATL)</option>
+          <option value="SEA">Seattle-Tacoma International Airport (SEA)</option>
+          <option value="MCO">Orlando International Airport (MCO)</option>
+          <option value="BOS">Boston Logan International Airport (BOS)</option>
+          <option value="LAS">Harry Reid International Airport (LAS)</option>
+          <option value="DFW">Dallas/Fort Worth International Airport (DFW)</option>
+          <option value="JFK">John F. Kennedy International Airport (JFK)</option>
+        </select>
+        <br>
+        <label for="destination">Select Destination:</label>
+        <select name="destination" id="destination">
+          <option value="LAX">Los Angeles International Airport (LAX)</option>
+          <option value="ORD">Chicago O'Hare International Airport (ORD)</option>
+          <option value="MIA">Miami International Airport (MIA)</option>
+          <option value="SFO">San Francisco International Airport (SFO)</option>
+          <option value="IAD">Washington Dulles International Airport (IAD)</option>
+          <option value="ATL">Hartsfield-Jackson Atlanta International Airport (ATL)</option>
+          <option value="SEA">Seattle-Tacoma International Airport (SEA)</option>
+          <option value="MCO">Orlando International Airport (MCO)</option>
+          <option value="BOS">Boston Logan International Airport (BOS)</option>
+          <option value="LAS">Harry Reid International Airport (LAS)</option>
+          <option value="DFW">Dallas/Fort Worth International Airport (DFW)</option>
+          <option value="JFK">John F. Kennedy International Airport (JFK)</option>
+        </select>
+      </div>
+      <button type="submit">Find the cheapest flight route</button>
+    </form>
+  </div>
 </body>
 </html>
+
