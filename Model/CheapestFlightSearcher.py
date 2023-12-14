@@ -1,6 +1,8 @@
 import copy
 import heapq
 
+import numpy as np
+
 
 class CheapestFlightSearcher:
 
@@ -24,7 +26,7 @@ class CheapestFlightSearcher:
 
         # Create min heap and visited set
         # By default, python orders by the first element in the tuple
-        heap = [(0, source_index, [0])]  # [(cost,node,path)] 
+        heap = [(0, source_index, [source_index])]  # [(cost,node,path)]
         visited_nodes_dict = dict()  # { visited_node -> cost}
         path_dict = {i: [] for i in range(0, len(self.__adjacency_matrix[0]))}  # { node -> [shortest path] }
 
@@ -34,6 +36,7 @@ class CheapestFlightSearcher:
             if current_node in visited_nodes_dict.keys():
                 continue
 
+
             # Add node to the visit set
             visited_nodes_dict[current_node] = cost
 
@@ -42,7 +45,7 @@ class CheapestFlightSearcher:
 
             # Iterate through all adjacent nodes and add them to the heap
             for node in range(0, len(self.__adjacency_matrix[current_node])):
-                if self.__adjacency_matrix[current_node][node] == -1:
+                if self.__adjacency_matrix[current_node][node] == np.inf:
                     continue  # there is no edge between the current node and the destination node
                 path_list = copy.deepcopy(path_list_of_current_node)
                 path_list.append(node)
@@ -55,4 +58,4 @@ class CheapestFlightSearcher:
                      path_dict[destination_index]))
 
         # Return cost and path as a tuple
-        return cost_to_reach_destination, source_airport_code, path_to_reach_destination
+        return cost_to_reach_destination, path_to_reach_destination

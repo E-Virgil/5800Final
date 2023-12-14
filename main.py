@@ -6,4 +6,4 @@ searcher = CheapestFlightSearcher(matrix.get_GHG_matrix(), airport_code_to_index
 
 if __name__ == "__main__":
 
-    print(searcher.search('JFK', 'LAX'))
+    print(matrix.get_USD_matrix()[7][2])

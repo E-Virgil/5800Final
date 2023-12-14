@@ -18,13 +18,16 @@ def index():
 def result():
     destination = request.args.get('destination')
     origin = request.args.get('origin')
-    path = usd_searcher.search(origin, destination)
+    path = usd_searcher.search(origin, destination)[1]
+
+
 
 
     print(f"Origin: {origin}")
     print(f"Destination: {destination}")
+    print(f"Path: {path}")
 
-    return render_template('result.html', origin=origin, destination=destination)
+    return render_template('result.html', origin=origin, destination=destination, path=path)
 
 if __name__ == "__main__":
   app.run(debug=True)

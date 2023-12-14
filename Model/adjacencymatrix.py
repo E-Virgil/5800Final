@@ -45,6 +45,7 @@ class AdjacencyMatrix:
             if costUSD != "NA" or costGHG != "NA":
                 self.adjacency_matrix_USD[origin][destination] = float(costUSD)
                 self.adjacency_matrix_GHG[origin][destination] = float(costGHG)
+
             if costUSD == "NA" or costGHG == "NA":
                 self.adjacency_matrix_USD[origin][destination] = np.inf
                 self.adjacency_matrix_GHG[origin][destination] = np.inf
