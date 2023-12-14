@@ -42,13 +42,11 @@ class AdjacencyMatrix:
             costGHG = row['GHG']
 
             # fill the cell of the adjacency matrix that corresponds to that u,v edge cost
-            if costUSD != "NA" or costGHG != "NA":
+            if pd.notna(costUSD):
                 self.adjacency_matrix_USD[origin][destination] = float(costUSD)
+            if pd.notna(costGHG):
                 self.adjacency_matrix_GHG[origin][destination] = float(costGHG)
 
-            if costUSD == "NA" or costGHG == "NA":
-                self.adjacency_matrix_USD[origin][destination] = np.inf
-                self.adjacency_matrix_GHG[origin][destination] = np.inf
 
 
 
